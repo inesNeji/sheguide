@@ -1,0 +1,142 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-display: "General Sans";
+    --font-body: "DM Sans";
+    --font-mono: monospace;
+    --radius: 0.75rem;
+
+    --background: 0.98 0.02 102;
+    --foreground: 0.2 0.04 255;
+    --card: 1.0 0.01 102;
+    --card-foreground: 0.18 0.04 255;
+    --popover: 1.0 0.01 102;
+    --popover-foreground: 0.18 0.04 255;
+
+    --primary: 0.65 0.08 185;
+    --primary-foreground: 0.98 0.01 102;
+
+    --secondary: 0.7 0.06 140;
+    --secondary-foreground: 0.16 0.04 255;
+    --muted: 0.92 0.02 102;
+    --muted-foreground: 0.5 0.02 255;
+
+    --accent: 0.7 0.065 135;
+    --accent-foreground: 0.98 0.01 102;
+
+    --destructive: 0.58 0.19 25;
+    --destructive-foreground: 0.98 0.01 102;
+
+    --border: 0.88 0.02 102;
+    --input: 0.92 0.02 102;
+    --ring: 0.65 0.08 185;
+
+    --chart-1: 0.58 0.19 25;
+    --chart-2: 0.7 0.065 135;
+    --chart-3: 0.65 0.08 185;
+    --chart-4: 0.72 0.04 79;
+    --chart-5: 0.52 0.14 76;
+
+    --sidebar: 0.98 0.01 102;
+    --sidebar-foreground: 0.2 0.04 255;
+    --sidebar-primary: 0.65 0.08 185;
+    --sidebar-primary-foreground: 0.98 0.01 102;
+    --sidebar-accent: 0.92 0.02 102;
+    --sidebar-accent-foreground: 0.25 0.04 255;
+    --sidebar-border: 0.88 0.02 102;
+    --sidebar-ring: 0.65 0.08 185;
+  }
+
+  .dark {
+    --background: 0.13 0.02 255;
+    --foreground: 0.94 0.02 102;
+    --card: 0.16 0.02 255;
+    --card-foreground: 0.94 0.02 102;
+    --popover: 0.2 0.02 255;
+    --popover-foreground: 0.94 0.02 102;
+
+    --primary: 0.72 0.08 185;
+    --primary-foreground: 0.13 0.02 255;
+
+    --secondary: 0.75 0.06 140;
+    --secondary-foreground: 0.92 0.02 102;
+    --muted: 0.2 0.02 255;
+    --muted-foreground: 0.6 0.02 102;
+
+    --accent: 0.75 0.065 135;
+    --accent-foreground: 0.13 0.02 255;
+
+    --destructive: 0.68 0.18 22;
+    --destructive-foreground: 0.13 0.02 255;
+
+    --border: 0.25 0.02 255;
+    --input: 0.25 0.02 255;
+    --ring: 0.72 0.08 185;
+
+    --chart-1: 0.68 0.18 22;
+    --chart-2: 0.75 0.065 135;
+    --chart-3: 0.72 0.08 185;
+    --chart-4: 0.78 0.04 79;
+    --chart-5: 0.62 0.14 76;
+
+    --sidebar: 0.16 0.02 255;
+    --sidebar-foreground: 0.94 0.02 102;
+    --sidebar-primary: 0.72 0.08 185;
+    --sidebar-primary-foreground: 0.13 0.02 255;
+    --sidebar-accent: 0.2 0.02 255;
+    --sidebar-accent-foreground: 0.92 0.02 102;
+    --sidebar-border: 0.25 0.02 255;
+    --sidebar-ring: 0.72 0.08 185;
+  }
+
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+}
+
+@layer utilities {
+  .shadow-subtle {
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.07);
+  }
+  .transition-smooth {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .text-display-xl {
+    @apply text-4xl font-bold leading-tight font-display;
+  }
+  .text-display-lg {
+    @apply text-3xl font-bold leading-snug font-display;
+  }
+  .text-display-md {
+    @apply text-2xl font-bold leading-snug font-display;
+  }
+  .text-body-lg {
+    @apply text-lg leading-relaxed font-body;
+  }
+  .text-body-md {
+    @apply text-base leading-relaxed font-body;
+  }
+  .text-body-sm {
+    @apply text-sm leading-normal font-body;
+  }
+}
+
+@font-face {
+  font-family: "DM Sans";
+  src: url("/assets/fonts/DMSans.woff2") format("woff2");
+  font-weight: 400 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "General Sans";
+  src: url("/assets/fonts/GeneralSans.woff2") format("woff2");
+  font-weight: 400 700;
+  font-display: swap;
+}

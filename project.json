@@ -1,0 +1,24 @@
+{
+  "overview": "SheGuide is an integration super-app for international women in Germany, helping them navigate bureaucracy, find peer support, understand their rights, and settle into professional life with confidence.",
+  "features": [
+    "She Buddy peer matching network connecting newcomers with volunteer mentors",
+    "Smart bureaucracy deadline tracker personalized by visa type and arrival date",
+    "AI-powered German form pre-filler storing user profile once for all official forms",
+    "Rights awareness Q&A tool identifying AGG violations and connecting to legal aid",
+    "3-stage integration journey: Arrival & Immigration, Settling In, Professional Integration",
+    "Teal/green branded dashboard with sidebar navigation"
+  ],
+  "category": "civic-tech-integration",
+  "tags": [
+    "women",
+    "integration",
+    "germany",
+    "immigration",
+    "bureaucracy",
+    "peer-support",
+    "legal-aid",
+    "teal",
+    "prototype"
+  ],
+  "last_updated": "2026-04-19T08:46:31.693Z"
+}

@@ -1,0 +1,87 @@
+type VisaType = 
+ variant {
+   blueCard;
+   generalResidence;
+   student;
+ };
+type UserProfile = 
+ record {
+   arrivalDate: text;
+   city: text;
+   familySituation: text;
+   fullName: text;
+   nationality: text;
+   profession: text;
+   visaType: VisaType;
+ };
+type Stage = 
+ variant {
+   arrival;
+   professional;
+   settling;
+ };
+type RightsResult = 
+ record {
+   contactInfo: text;
+   legalBasis: text;
+   summary: text;
+   violationType: text;
+ };
+type RightsQuestion = 
+ record {
+   id: nat;
+   options: vec text;
+   question: text;
+ };
+type FormField = 
+ record {
+   key: text;
+   value: text;
+ };
+type DeadlineStatus = 
+ variant {
+   completed;
+   upcoming;
+   urgent;
+ };
+type Deadline = 
+ record {
+   description: text;
+   dueDate: text;
+   id: nat;
+   officialLink: text;
+   stage: Stage;
+   status: DeadlineStatus;
+   title: text;
+ };
+type BuddyProfile = 
+ record {
+   bio: text;
+   city: text;
+   countryOfOrigin: text;
+   id: nat;
+   isAvailable: bool;
+   languages: vec text;
+   name: text;
+   professionalField: text;
+ };
+type BuddyMatch = 
+ record {
+   profile: BuddyProfile;
+   score: nat;
+ };
+service : {
+  getBuddies: () -> (vec BuddyProfile) query;
+  getDeadlines: (visaType: VisaType, arrivalDate: text) ->
+   (vec Deadline) query;
+  getPrefilledForm: (formType: text) -> (vec FormField) query;
+  getRightsQuestions: () -> (vec RightsQuestion) query;
+  getRightsResult: (answers: vec record {
+                                   nat;
+                                   text;
+                                 }) -> (vec RightsResult) query;
+  getTopMatches: (city: text, field: text, origin: text) ->
+   (vec BuddyMatch) query;
+  getUserProfile: () -> (opt UserProfile) query;
+  saveUserProfile: (profile: UserProfile) -> ();
+}
